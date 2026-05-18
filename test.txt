@@ -1,0 +1,33 @@
+graph TD
+    %% 节点定义
+    A([触发自动化测试]) --> B[加载测试规范文档]
+    B --> C[工作流解析]
+    C --> D[生成测试用例]
+    
+    %% 分支走向
+    D --> E[输出用例到excel]
+    E --> F[覆盖率分析]
+    F --> G{AI智能体执行测试}
+    G --> H[生成测试分析报告]
+
+    D -.->|用例补充| I[人工用例优化]
+    I -.->|反馈注入| G
+    
+    H --> J["生成自动化测试脚本"]
+
+    %% 样式调整
+    style A fill:#1e293b,stroke:#334155,stroke-width:2px,color:#f8fafc
+    style B fill:#334155,stroke:#475569,stroke-width:1px,color:#f8fafc
+    style C fill:#334155,stroke:#475569,stroke-width:1px,color:#f8fafc
+    style D fill:#0f766e,stroke:#115e59,stroke-width:2px,color:#f0fdfa
+    style E fill:#92400e,stroke:#b45309,stroke-width:1px,color:#fef3c7
+    style F fill:#92400e,stroke:#b45309,stroke-width:1px,color:#fef3c7
+    style G fill:#6b21a8,stroke:#7c3aed,stroke-width:2px,color:#f5f3ff
+    style H fill:#0f766e,stroke:#115e59,stroke-width:1px,color:#f0fdfa
+    style I fill:#b91c1c,stroke:#dc2626,stroke-width:2px,color:#fef2f2
+    style J fill:#831843,stroke:#9f1239,stroke-width:2px,color:#fce7f3
+
+    %% 链接样式
+    linkStyle default stroke:#64748B,stroke-width:2px;
+    linkStyle 4 stroke:#EF4444,stroke-width:2px,stroke-dasharray: 5 5;
+    linkStyle 5 stroke:#EF4444,stroke-width:2px,stroke-dasharray: 5 5;
